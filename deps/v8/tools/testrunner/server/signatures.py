@@ -37,7 +37,7 @@ def ReadFileAndSignature(filename):
   signature_file = filename + ".signature"
   if (not os.path.exists(signature_file) or
       os.path.getmtime(signature_file) < os.path.getmtime(filename)):
-    private_key = "~/.ssh/v8_dtest"
+    private_key = os.environ.get('V8_DTEST_KEY_PATH', os.path.expanduser('~/.ssh/v8_dtest'))
     code = subprocess.call("openssl dgst -out %s -sign %s %s" %
                            (signature_file, private_key, filename),
                            shell=True)
