@@ -1,0 +1,16 @@
+{
+  "name": "node-runtime",
+  "version": "5.10.1",
+  "description": "Node.js JavaScript runtime",
+  "private": true,
+  "scripts": {
+    "lint": "node tools/eslint/bin/eslint.js lib test",
+    "test": "python tools/test.py"
+  },
+  "engines": {
+    "node": ">=5.0.0"
+  },
+  "devDependencies": {
+    "eslint": "2.7.0"
+  }
+}
